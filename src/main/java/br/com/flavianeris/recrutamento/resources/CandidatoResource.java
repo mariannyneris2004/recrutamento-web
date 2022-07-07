@@ -18,7 +18,7 @@ public class CandidatoResource {
 
 	@GetMapping
 	public ResponseEntity<Candidato> findAll() throws ParseException{
-		Candidato c = new Candidato(1L, "Mary", sdf.parse("16/08/2004"), "984562004",
+		Candidato c = new Candidato(null, "Mary", sdf.parse("16/08/2004"), "984562004",
 				"985104522", "rua 14, n273A, st Luzia", "Não possui",
 				"mary@gmail.com", "teste", "ativo", "não declarar");
 		return ResponseEntity.ok().body(c);
