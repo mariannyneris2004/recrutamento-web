@@ -1,0 +1,23 @@
+#TIPOS DE RELATÓRIO#
+- candidato e infoCandidato -> tipo currículo (exibir as informações do candidato em uma tabela) ok
+                            -> excluir observação e status ok
+
+- vagas   -> ver com Flávia os filtros
+		-> vagas em aberto -> listagem (titulo, cliente, dataInicial) ok
+		-> vagas finalizadas -> listagem (titulo, cliente, dataFinal, candidato(nome, contato)) ok
+		-> por cliente: vagas em aberto 1 ok
+				vagas finalizadas 2 ok
+
+#PARTE ESTÉTICA#
+- Ver com Flávia: 
+	pegar as logos -> pdf, jpg ou jpeg ok
+	pegar as cores -> seguir a paleta da empresa ok
+	pegar as fontes -> letras, tamanhos e formatos ok
+- escolher modelos -> atender as necessidades de cada relatório ok
+
+#ANÁLISE#
+- adequações do NetBeans para o Eclipse ok
+- baixar bibliotecas jasper -> configurar bibliotecas no eclipse ok
+
+#CORRIGIR#
+- Não gera relatório dos candidatos que não possuem um cargo cadastrado em alguma informação ok

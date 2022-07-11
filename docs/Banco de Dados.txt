@@ -1,0 +1,8 @@
+Criar banco de dados -> create database
+Criar tabela -> create table
+Alterar tabela -> alter table
+Apagar tabela -> drop table
+Inserir dados -> isert into
+Alterar dados -> update
+Remover dados -> delete
+Selecionar dados -> selecte

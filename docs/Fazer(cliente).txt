@@ -1,0 +1,24 @@
+#ALTERAÇÕES A SEREM FEITAS#
+- razão social ok
+- cnpj ok
+- segmento de atuação ok
+- restrições de contratação da empresa ok
+- preferências de contratação da empresa ok
+- pesquisa ok
+
+CLIENTE:
+
+- Botão salvar 
+- initializeNodes 
+- getFormData 
+- createDialogForm 
+- updateFormData
+- updateTableView 
+- instanciateCliente
+- setError
+- btRemover
+- btCancelar
+- btEditar 
+- listeners 
+ - notify 
+ - subscribe 

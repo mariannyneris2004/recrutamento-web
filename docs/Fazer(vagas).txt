@@ -1,0 +1,38 @@
+#ALTERAÇÕES A SEREM FEITAS#
+- REFAZER A TELA ok
+- salário base ok
+- benefícios -> textArea ok
+- carga horária (mensal) ok
+- jornada de trabalho (horário do trabalho) ok
+- periculosidade -> checkbox ok
+- insalubridade -> checkbox ok
+- descrição das atividades -> textArea ok
+
+- filtro: cargo, sexo, cnh (relatório)
+- pesquisa ok
+- botão para finalizar vaga (form) -> vagaForm ok
+- botão de vagas finalizadas (grid) -> ListaVagas ok
+
+PROBLEMAS:
+- DatePicker ok
+- listaVagas ok
+- getFormData() ok
+- Salvar ok
+- cbCargo ok
+- cbCliente ok
+- Cancelar ok
+- confirmacaoSalvar ok
+- Remover ok
+- Editar (corrigir erro) ok
+ - está inserindo uma nova vaga ok
+- Erros ok
+- InitializeNodes ok
+- Confirmações de cancelar e fechar ok
+- loadAssociateObjects() (cargo e cliente) ok
+- subscribeDataChangeListener ok
+- DataChangeListeners ok
+- notifyDataChangeListeners()ok
+- updateFormData ok
+- updateTableView ok
+- corrigir data em updateFormData ok
+- nome do cliente ok

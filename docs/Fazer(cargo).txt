@@ -1,0 +1,33 @@
+#ALTERAÇÕES A SEREM FEITAS#
+- CBO -> string e only numbers ok
+- título ok
+- cursos obrigatórios para o cargo ok
+- pesquisa ok
+
+CARGO:
+
+- Botão salvar 
+
+- initializeNodes
+
+- getFormData 
+
+- createDialogForm 
+
+- updateFormData 
+
+- updateTableView
+
+- instanciateCargo
+
+- setError 
+
+- btRemover
+
+- btCancelar 
+
+- btEditar
+
+- listeners 
+ - notify 
+ - subscribe 

@@ -1,0 +1,36 @@
+#A SER FEITO#
+TABELA
+- vaga ok
+- cliente ok
+- candidato ok
+- cargo ok
+- data de admissão ok
+- modalidade de experiência (combo) ok
+ - 30+60
+ - 45+45
+ - 90
+ - textField para outras opções ok
+- status da admissão ok
+ - desligado no primeiro contrato
+ - desligado no fim do período de experiência
+ - efetivado
+
+botão em vaga para finalizá-la: ok
+abre uma tela com idVaga, idCliente e idCargo carregados ok
+combo com os candidatos cadastrados naquela vaga ok
+datePicker com data de admissão ok
+combo status ok
+combo modalidade ok
+txt observação ok
+
+ao salvar: - remover vaga de ListaVagas ok
+	   - recarregar ListaVaga sem a vaga finalizada ok
+	   - passá-la para ListaVagasFinaizadas ok
+		- carregar cargo, cliente e candidato ok
+	   - ao remover de ListaVagasFinalizadas, aparecer novamente em ListaVagas ok
+
+Não permitir que o mesmo candidato seja salvo em candidatoVaga mais de uma vez ok
+
+Botão editar (abrir os dois formulários) -> conflito com as combos e os campos a serem preenchidos ok
+
+Corrigir botão pesquisar (SQL funcionando) ok

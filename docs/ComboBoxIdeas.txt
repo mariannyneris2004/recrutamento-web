@@ -1,0 +1,21 @@
+Candidato
+- String staus
+
+CandidatoInfoController
+- enum
+enum Status {
+	ATIVO("Ativo"), INATVO("Inativo"), NAO_INDICAR("Não Indicar");
+	private final String getStatus;
+	private Status(String st) {
+		getStatus = st;
+	}
+	@Override
+	public String toString() {
+		return getStatus;
+	}
+}
+
+- comboBox
+private ComboBox<Status> cbStatus = new ComboBox<Status>();
+
+*OBSERVABLELIST É NECESSÁRIO*

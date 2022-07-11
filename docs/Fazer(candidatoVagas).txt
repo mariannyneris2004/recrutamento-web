@@ -1,0 +1,29 @@
+#ALTERAÇÕES A SEREM FEITAS#
+- status -> incluir reencaminhar ok
+
+#FEITO#
+- getFormData() ok
+- Salvar ok
+- cbCandidato ok
+- Cancelar ok
+- confirmacaoSalvar ok
+- Remover ok
+- Editar ok
+- Erros ok
+- InitializeNodes ok
+- Confirmações de cancelar e fechar ok
+- loadAssociateObjects() (carndidato) ok
+- subscribeDataChangeListener ok 
+- DataChangeListeners ok
+- notifyDataChangeListeners() ok
+- updateFormData ok
+- updateTableView ok
+- titulo da vaga no txtVaga ok
+- correção UPDATE CandidatoVagaDaoJDBC ok
+- findAll() ok
+- correção updateTableView ok
+- remover vaga ok
+- correção editar ok
+- mostrar objetos ainda não salvos na grid ok
+- objeto duplicado quando edita (caandidatoVaga e infoCandidato) ok
+- correção remover ok

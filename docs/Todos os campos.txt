@@ -1,0 +1,75 @@
+#CANDIDATO#
+- ID
+- Nome
+- Data de nascimento
+- Telefone
+- Telefone para contato
+- Endereço
+- CNH
+- Email
+- Observação
+- Status
+- Sexo
+
+#CANDIDATO INFO#
+- ID
+- Tipo
+- Ano Inicial
+- Ano Final
+- Descrição
+- Candidato
+- Cargo
+
+#CANDIDATO Vaga#
+- ID
+- Observação
+- Status
+- Classificação
+- Vaga
+- Candidato
+
+#CARGO#
+- ID
+- Descrição
+- Título
+- Cursos
+- Cbo
+
+#CLIENTE#
+- ID
+- Nome
+- Razão Social
+- CNPJ
+- Segmento de Atuação
+- Restrições
+- Preferências
+- Telefone
+- Email
+
+#FINALIZAR VAGA#
+- ID
+- Admissão
+- Modalidade
+- Status
+- Outro
+- Observação
+- Vaga
+- Candidato Vaga
+- Cliente
+- Cargo
+
+#VAGA#
+- ID
+- Título
+- Requisitos
+- Data Inicial
+- Data Final
+- Salário
+- Benefícios
+- Carga Horária
+- Jornada de Trabalho
+- Periculosidade
+- Insalubridade
+- Descrição
+- Cargo
+- Cliente

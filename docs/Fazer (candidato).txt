@@ -1,0 +1,28 @@
+#ALTERAÇÕES A SEREM FEITAS#
+- endereço (obrigatório) ok
+- telefone (obrigatório) e telefone contato ok
+- CNH -> categoria ok
+- incluir pesquisa ok
+
+# CANDIDATO -> FEITO #
+- model.dao 
+- model.dao.impl 
+- model.service 
+- atualizar: DaoRhbd.java 
+- comboBox candidato_vaga 
+- testar ListaComboBox -> foco comboBox Cargo (InfoFormController) 
+- incluir id (info_candidato)
+- botões salvar -> celular precisa ser string
+ - updateFormData()
+ - setCandidato()
+ - mostrar na grid os objetos salvos (algum problema no service)
+- Cargo -> erro na linha 15 -> CargoForm.fxml
+- botão Cancelar
+- botões remover
+- botões editar
+ - atualizar update
+- criar os listeners
+- mensagens de erro
+- quebra de linha -> observação
+- mostrar id, nome, celular e status
+- confirmação parar salvar

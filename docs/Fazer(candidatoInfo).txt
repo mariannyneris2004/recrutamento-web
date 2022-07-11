@@ -1,0 +1,35 @@
+#ALTERAÇÕES A SEREM FEITAS#
+- objetivo -> descrição ok
+- experiência -> cargo, descrição, ano inicial e ano final ok
+- formação -> descrição, ano inicial e ano final ok
+- cursos/treinamentos -> descrição, ano inicial e ano final ok
+- restrições -> descrição ok
+- corrigir erro cargo id = null
+
+CANDIDATO INFO:
+
+- ComboBox tipo ok
+- Associar candidato e candidatoInfo ok
+- ComboBox cargo ok
+- Botão salvar ok
+ - candidato ok
+- initializeNodes ok 
+- getFormData ok
+- createDialogForm ok
+- updateFormData ok
+- updateTableView ok 
+- instanciateInfo ok
+- setError ok
+- btRemover ok
+- btCancelar ok
+- btEditar ok
+- listeners ok
+ - notify ok
+ - subscribe ok
+- findById ok
+- a tela vazia não aparece pois the return value of "model.entities.Candidato.getId()" is null ok
+- confirmação ao cancelar ou fechar a tela ok
+- remover (criar lista) -> remover somente quando apertar em salvar candidato ok
+ - botão salvar aparece a mensagem de confirmação ok
+- a tela não carrega informações ainda não salvas (não atualiza a tabela) ok
+- - remover candidato ok
