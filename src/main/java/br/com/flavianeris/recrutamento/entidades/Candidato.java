@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
@@ -22,8 +23,6 @@ public class Candidato implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
-	
-	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date dataNascimento;
 	private String telefone;
 	private String telefoneContato;
@@ -34,6 +33,9 @@ public class Candidato implements Serializable {
 	private String status;
 	private String genero;
 
+	@OneToMany(mappedBy = "candidato")
+	private List<CandidatoInfo> infos = new ArrayList<>();
+	
 	public Candidato() {
 	}
 

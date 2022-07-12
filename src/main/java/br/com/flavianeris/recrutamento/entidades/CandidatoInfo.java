@@ -9,6 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class CandidatoInfo implements Serializable {
@@ -22,14 +26,19 @@ public class CandidatoInfo implements Serializable {
 	private String anoFinal = "";
 	private String descricao;
 	
+	@ManyToOne
+	@JoinColumn(name = "candidato_id")
 	private Candidato candidato;
+	
+	@ManyToOne
+	@JoinColumn(name = "cargo_id")
 	private Cargo cargo;
 	
 	public CandidatoInfo() {
 	}
 
 	public CandidatoInfo(Candidato candidato,Long id, String tipo, String anoInicial, String anoFinal, String descricao, 
-			 Cargo cargo) {
+			Cargo cargo) {
 		this.candidato = candidato;
 		this.id = id;
 		this.tipo = tipo;
@@ -75,16 +84,8 @@ public class CandidatoInfo implements Serializable {
 		return candidato;
 	}
 	
-	public void setCandidato(Candidato candidato) {
-		this.candidato = candidato;
-	}
-
 	public Cargo getCargo() {
 		return cargo;
-	}
-
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
 	}
 	
 	public Long getId() {
@@ -115,7 +116,7 @@ public class CandidatoInfo implements Serializable {
 	@Override
 	public String toString() {
 		return "CandidatoInfo [tipo=" + tipo + ", anoInicial=" + anoInicial + ", anoFinal=" + anoFinal + ", descricao="
-				+ descricao + ", candidato=" + candidato.getNome() + ", cargo=" + cargo.getDescricao() + "]";
+				+ descricao + ", candidato=" + candidato.getNome() + ", cargo=" + cargo.getTitulo() + "]";
 	}
 	
 	public static List<String> listTipo() {

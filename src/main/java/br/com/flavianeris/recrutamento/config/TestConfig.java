@@ -2,6 +2,7 @@ package br.com.flavianeris.recrutamento.config;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -60,8 +61,8 @@ public class TestConfig implements CommandLineRunner{
 		
 		clienteRepository.saveAll(Arrays.asList(cliente1));
 		
-		CandidatoInfo ci1 = new CandidatoInfo(null, null, "Formação", "2020", "2022",
-				"Ensino médio", null);
+		CandidatoInfo ci1 = new CandidatoInfo(candidato2, null, "Formação", "2020", "2022",
+				"Ensino médio", cargo2);
 		
 		ciRepository.saveAll(Arrays.asList(ci1));
 	}
