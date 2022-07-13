@@ -1,12 +1,15 @@
 package br.com.flavianeris.recrutamento.entidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Cliente implements Serializable{
@@ -23,6 +26,9 @@ public class Cliente implements Serializable{
 	private String preferencias = "";
 	private String telefone = "";
 	private String email = "";
+	
+	@OneToMany(mappedBy = "cliente")
+	private List<Vaga> vagas = new ArrayList<>();
 	
 	public Cliente() {
 	}

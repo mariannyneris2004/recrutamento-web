@@ -26,6 +26,9 @@ public class Cargo implements Serializable{
 	@OneToMany(mappedBy = "cargo")
 	private List<CandidatoInfo> infos = new ArrayList<>();
 	
+	@OneToMany(mappedBy = "cargo")
+	private List<Vaga> vagas = new ArrayList<>();
+	
 	public Cargo() {
 	}
 
