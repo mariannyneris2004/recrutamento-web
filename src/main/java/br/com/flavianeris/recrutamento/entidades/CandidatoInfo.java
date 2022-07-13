@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import br.com.flavianeris.recrutamento.entidades.enums.CandidatoInfoTipo;
+
 @Entity
 public class CandidatoInfo implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -37,23 +39,25 @@ public class CandidatoInfo implements Serializable {
 	public CandidatoInfo() {
 	}
 
-	public CandidatoInfo(Candidato candidato,Long id, String tipo, String anoInicial, String anoFinal, String descricao, 
-			Cargo cargo) {
+	public CandidatoInfo(Candidato candidato,Long id, CandidatoInfoTipo tipo, String anoInicial, 
+			String anoFinal, String descricao, Cargo cargo) {
 		this.candidato = candidato;
 		this.id = id;
-		this.tipo = tipo;
+		setTipo(tipo);
 		this.anoInicial = anoInicial;
 		this.anoFinal = anoFinal;
 		this.descricao = descricao;
 		this.cargo = cargo;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public CandidatoInfoTipo getTipo() {
+		return CandidatoInfoTipo.valorDe(tipo);
 	}
 	
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setTipo(CandidatoInfoTipo tipo) {
+		if (tipo != null) {
+			this.tipo = tipo.getCodigo();
+		}
 	}
 	
 	public String getAnoInicial() {
@@ -119,14 +123,5 @@ public class CandidatoInfo implements Serializable {
 				+ descricao + ", candidato=" + candidato.getNome() + ", cargo=" + cargo.getTitulo() + "]";
 	}
 	
-	public static List<String> listTipo() {
-		List<String> list = new ArrayList<>();
-		list.add("Curso/Treinamento");
-		list.add("Experiência");
-		list.add("Formação");
-		list.add("Objetivo");
-		list.add("Restrições");
-		return list;
-	}
 }
 

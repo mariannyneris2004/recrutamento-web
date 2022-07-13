@@ -13,6 +13,7 @@ import br.com.flavianeris.recrutamento.entidades.Candidato;
 import br.com.flavianeris.recrutamento.entidades.CandidatoInfo;
 import br.com.flavianeris.recrutamento.entidades.Cargo;
 import br.com.flavianeris.recrutamento.entidades.Cliente;
+import br.com.flavianeris.recrutamento.entidades.enums.CandidatoInfoTipo;
 import br.com.flavianeris.recrutamento.repositorios.CandidatoInfoRepository;
 import br.com.flavianeris.recrutamento.repositorios.CandidatoRepository;
 import br.com.flavianeris.recrutamento.repositorios.CargoRepository;
@@ -61,7 +62,7 @@ public class TestConfig implements CommandLineRunner{
 		
 		clienteRepository.saveAll(Arrays.asList(cliente1));
 		
-		CandidatoInfo ci1 = new CandidatoInfo(candidato2, null, "Formação", "2020", "2022",
+		CandidatoInfo ci1 = new CandidatoInfo(candidato2, null, CandidatoInfoTipo.FORMAÇÃO, "2020", "2022",
 				"Ensino médio", cargo2);
 		
 		ciRepository.saveAll(Arrays.asList(ci1));
