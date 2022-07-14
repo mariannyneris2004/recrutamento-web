@@ -11,6 +11,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import br.com.flavianeris.recrutamento.entidades.enums.CandidatoVagaStatus;
+import br.com.flavianeris.recrutamento.entidades.enums.FinalizarVagaModalidade;
+import br.com.flavianeris.recrutamento.entidades.enums.FinalizarVagaStatus;
+
 @Entity
 public class FinalizarVaga implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -77,20 +81,24 @@ public class FinalizarVaga implements Serializable {
 		this.admissao = admissao;
 	}
 
-	public String getModalidade() {
-		return modalidade;
+	public FinalizarVagaModalidade getModalidade() {
+		return FinalizarVagaModalidade.valorDe(modalidade);
+	}
+	
+	public void setModalidade(FinalizarVagaModalidade modalidade) {
+		if (modalidade != null) {
+			this.modalidade = modalidade.getCodigo();
+		}
 	}
 
-	public void setModalidade(String modalidade) {
-		this.modalidade = modalidade;
+	public FinalizarVagaStatus getStatus() {
+		return FinalizarVagaStatus.valorDe(status);
 	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
+	
+	public void setStatus(FinalizarVagaStatus status) {
+		if (status != null) {
+			this.status = status.getCodigo();
+		}
 	}
 
 	public String getOutro() {

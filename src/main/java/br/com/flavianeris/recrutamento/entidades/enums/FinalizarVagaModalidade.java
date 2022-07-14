@@ -17,8 +17,8 @@ public enum FinalizarVagaModalidade {
 		return codigo;
 	}
 	
-	public static CandidatoInfoTipo valorDe(String codigo) {
-		for (CandidatoInfoTipo value : CandidatoInfoTipo.values()) {
+	public static FinalizarVagaModalidade valorDe(String codigo) {
+		for (FinalizarVagaModalidade value : FinalizarVagaModalidade.values()) {
 			if (value.getCodigo() == codigo) {
 				return value;
 			}

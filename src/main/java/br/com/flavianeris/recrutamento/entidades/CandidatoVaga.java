@@ -10,6 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import br.com.flavianeris.recrutamento.entidades.enums.CandidatoStatus;
+import br.com.flavianeris.recrutamento.entidades.enums.CandidatoVagaStatus;
+
 @Entity
 public class CandidatoVaga implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -27,12 +30,12 @@ public class CandidatoVaga implements Serializable {
 	public CandidatoVaga() {
 	}
 
-	public CandidatoVaga(Integer id, String observacao, String status, String classificacao, Vaga vaga,
-			Candidato candidato) {
+	public CandidatoVaga(Integer id, String observacao, CandidatoVagaStatus status, 
+			String classificacao, Vaga vaga, Candidato candidato) {
 		super();
 		this.id = id;
 		this.observacao = observacao;
-		this.status = status;
+		setStatus(status);
 		this.classificacao = classificacao;
 		this.vaga = vaga;
 		this.candidato = candidato;
@@ -54,12 +57,14 @@ public class CandidatoVaga implements Serializable {
 		this.observacao = observacao;
 	}
 
-	public String getStatus() {
-		return status;
+	public CandidatoVagaStatus getStatus() {
+		return CandidatoVagaStatus.valorDe(status);
 	}
-
-	public void setStatus(String status) {
-		this.status = status;
+	
+	public void setStatus(CandidatoVagaStatus status) {
+		if (status != null) {
+			this.status = status.getCodigo();
+		}
 	}
 
 	public String getClassificacao() {

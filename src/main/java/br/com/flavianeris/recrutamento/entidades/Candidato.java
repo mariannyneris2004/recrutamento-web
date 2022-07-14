@@ -15,6 +15,11 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
 
+import br.com.flavianeris.recrutamento.entidades.enums.CandidatoCNH;
+import br.com.flavianeris.recrutamento.entidades.enums.CandidatoGenero;
+import br.com.flavianeris.recrutamento.entidades.enums.CandidatoInfoTipo;
+import br.com.flavianeris.recrutamento.entidades.enums.CandidatoStatus;
+
 @Entity
 public class Candidato implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -41,19 +46,19 @@ public class Candidato implements Serializable {
 
 	public Candidato(Long id, String nome, Date dataNascimento, 
 			String telefone, String telefoneContato, String endereco, 
-			String cnh, String email, String observacao, String status, 
-			String genero) {
+			CandidatoCNH cnh, String email, String observacao, CandidatoStatus status, 
+			CandidatoGenero genero) {
 		this.id = id;
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
 		this.telefone = telefone;
 		this.telefoneContato = telefoneContato;
 		this.endereco = endereco;
-		this.cnh = cnh;
+		setCnh(cnh);
 		this.email = email;
 		this.observacao = observacao;
-		this.status = status;
-		this.genero = genero;
+		setStatus(status);
+		setGenero(genero);
 	}
 
 	public Long getId() {
@@ -104,8 +109,14 @@ public class Candidato implements Serializable {
 		this.endereco = endereco;
 	}
 	
-	public String getCnh() {
-		return cnh;
+	public CandidatoCNH getCnh() {
+		return CandidatoCNH.valorDe(cnh);
+	}
+	
+	public void setCnh(CandidatoCNH cnh) {
+		if (cnh != null) {
+			this.cnh = cnh.getCodigo();
+		}
 	}
 
 	public String getEmail() {
@@ -124,12 +135,24 @@ public class Candidato implements Serializable {
 		this.observacao = observacao;
 	}
 
-	public String getStatus() {
-		return status;
+	public CandidatoStatus getStatus() {
+		return CandidatoStatus.valorDe(status);
 	}
 	
-	public String getGenero() {
-		return genero;
+	public void setStatus(CandidatoStatus status) {
+		if (status != null) {
+			this.status = status.getCodigo();
+		}
+	}
+	
+	public CandidatoGenero getGenero() {
+		return CandidatoGenero.valorDe(genero);
+	}
+	
+	public void setGenero(CandidatoGenero genero) {
+		if (genero != null) {
+			this.genero = genero.getCodigo();
+		}
 	}
 	
 	public void setCandidato(Candidato candidato) {
@@ -156,31 +179,4 @@ public class Candidato implements Serializable {
 				+ ", email=" + email + ", observacao=" + observacao + ", status=" + status + ", genero=" + genero + "]";
 	}
 	
-	public static List<String> listStatus() {
-		List<String> list = new ArrayList<>();
-		list.add("Ativo");
-		list.add("Inativo");
-		list.add("Não Indicar");
-		return list;
-	}
-	
-	public static List<String> listCnh(){
-		List<String> list = new ArrayList<>();
-		list.add("ACC");
-		list.add("Categoria A");
-		list.add("Categoria B");
-		list.add("Categoria C");
-		list.add("Categoria D");
-		list.add("Categoria E");
-		return list;
-	}
-	
-	public static List<String> listGenero(){
-		List<String> list = new ArrayList<>();
-		list.add("Feminino");
-		list.add("Masculino");
-		list.add("Não-Binário");
-		list.add("Não declarar");
-		return list;
-	}
 }

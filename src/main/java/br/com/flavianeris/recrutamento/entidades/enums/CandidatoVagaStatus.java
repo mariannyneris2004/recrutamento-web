@@ -18,8 +18,8 @@ public enum CandidatoVagaStatus {
 		return codigo;
 	}
 	
-	public static CandidatoInfoTipo valorDe(String codigo) {
-		for (CandidatoInfoTipo value : CandidatoInfoTipo.values()) {
+	public static CandidatoVagaStatus valorDe(String codigo) {
+		for (CandidatoVagaStatus value : CandidatoVagaStatus.values()) {
 			if (value.getCodigo() == codigo) {
 				return value;
 			}

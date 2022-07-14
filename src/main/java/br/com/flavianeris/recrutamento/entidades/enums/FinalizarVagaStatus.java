@@ -16,8 +16,8 @@ public enum FinalizarVagaStatus {
 		return codigo;
 	}
 	
-	public static CandidatoInfoTipo valorDe(String codigo) {
-		for (CandidatoInfoTipo value : CandidatoInfoTipo.values()) {
+	public static FinalizarVagaStatus valorDe(String codigo) {
+		for (FinalizarVagaStatus value : FinalizarVagaStatus.values()) {
 			if (value.getCodigo() == codigo) {
 				return value;
 			}
