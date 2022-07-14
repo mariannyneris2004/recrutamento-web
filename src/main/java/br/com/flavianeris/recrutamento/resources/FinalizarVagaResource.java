@@ -9,21 +9,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.flavianeris.recrutamento.entidades.Candidato;
+import br.com.flavianeris.recrutamento.entidades.FinalizarVaga;
 import br.com.flavianeris.recrutamento.entidades.enums.CandidatoCNH;
 import br.com.flavianeris.recrutamento.entidades.enums.CandidatoGenero;
 import br.com.flavianeris.recrutamento.entidades.enums.CandidatoStatus;
+import br.com.flavianeris.recrutamento.entidades.enums.FinalizarVagaModalidade;
+import br.com.flavianeris.recrutamento.entidades.enums.FinalizarVagaStatus;
 
 @RestController
-@RequestMapping(value = "/candidatos")
-public class CandidatoResource {
-
+@RequestMapping(value = "/vagas/finalizar")
+public class FinalizarVagaResource {
+	
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	@GetMapping
-	public ResponseEntity<Candidato> findAll() throws ParseException{
-		Candidato c = new Candidato(null, "Mary", sdf.parse("16/08/2004"), "984562004",
-				"985104522", "rua 14, n273A, st Luzia", CandidatoCNH.NÃOPOSSUI,
-				"mary@gmail.com", "teste", CandidatoStatus.ATIVO, CandidatoGenero.NÃODECLARAR);
-		return ResponseEntity.ok().body(c);
+	public ResponseEntity<FinalizarVaga> findAll() throws ParseException{
+		FinalizarVaga fv = new FinalizarVaga(1L, null, null, sdf.parse("14/07/2022"), 
+				FinalizarVagaModalidade.QUARENTAECINCO, FinalizarVagaStatus.EFETIVADO,
+				"", "teste");
+		return ResponseEntity.ok().body(fv);
 	}
 }

@@ -21,39 +21,39 @@ public class FinalizarVaga implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	private Date admissao;
 	private String modalidade;
 	private String status;
 	private String outro;
 	private String observacao;
-	
+
 	private Cargo cargo;
 	private Cliente cliente;
 	private Vaga vaga;
 	private CandidatoVaga candidatoVaga;
-	
+
 	public FinalizarVaga() {
 	}
-	
-	public FinalizarVaga(Integer id, Vaga vaga, CandidatoVaga candidatoVaga, Date admissao,
-			String modalidade, String status, String outro, String observacao) {
+
+	public FinalizarVaga(Long id, Vaga vaga, CandidatoVaga candidatoVaga, Date admissao, FinalizarVagaModalidade modalidade,
+			FinalizarVagaStatus status, String outro, String observacao) {
 		super();
 		this.id = id;
 		this.vaga = vaga;
 		this.candidatoVaga = candidatoVaga;
 		this.admissao = admissao;
-		this.modalidade = modalidade;
-		this.status = status;
+		setModalidade(modalidade);
+		setStatus(status);
 		this.outro = outro;
 		this.observacao = observacao;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -84,7 +84,7 @@ public class FinalizarVaga implements Serializable {
 	public FinalizarVagaModalidade getModalidade() {
 		return FinalizarVagaModalidade.valorDe(modalidade);
 	}
-	
+
 	public void setModalidade(FinalizarVagaModalidade modalidade) {
 		if (modalidade != null) {
 			this.modalidade = modalidade.getCodigo();
@@ -94,7 +94,7 @@ public class FinalizarVaga implements Serializable {
 	public FinalizarVagaStatus getStatus() {
 		return FinalizarVagaStatus.valorDe(status);
 	}
-	
+
 	public void setStatus(FinalizarVagaStatus status) {
 		if (status != null) {
 			this.status = status.getCodigo();
@@ -152,7 +152,8 @@ public class FinalizarVaga implements Serializable {
 
 	@Override
 	public String toString() {
-		return "VagasFinalizadas [vaga=" + vaga + ", candidatoVaga=" + candidatoVaga + ", admissao=" + admissao + ", modalidade=" + modalidade + ", status=" + status + "]";
+		return "VagasFinalizadas [vaga=" + vaga + ", candidatoVaga=" + candidatoVaga + ", admissao=" + admissao
+				+ ", modalidade=" + modalidade + ", status=" + status + "]";
 	}
-	
+
 }

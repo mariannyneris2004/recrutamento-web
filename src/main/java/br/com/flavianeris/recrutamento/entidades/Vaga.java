@@ -17,10 +17,10 @@ public class Vaga implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	private String titulo;
 	private String requisitos;
-	private Date data;
+	private Date dataInicial;
 	private Date dataFinal;
 	private String salario;
 	private String beneficios;
@@ -41,7 +41,7 @@ public class Vaga implements Serializable {
 	public Vaga() {
 	}
 
-	public Vaga(Integer id, String titulo, String requisitos, Date data, Date dataFinal, 
+	public Vaga(Long id, String titulo, String requisitos, Date dataInicial, Date dataFinal, 
 			String salario, String beneficios, String cargaHoraria, String jornadaTrabalho,
 			String periculosidade, String insalubridade, String descricao, Cliente cliente,
 			Cargo cargo) {
@@ -49,7 +49,7 @@ public class Vaga implements Serializable {
 		this.id = id;
 		this.titulo = titulo;
 		this.requisitos = requisitos;
-		this.data = data;
+		this.dataInicial = dataInicial;
 		this.dataFinal = dataFinal;
 		this.salario = salario;
 		this.beneficios = beneficios;
@@ -62,11 +62,11 @@ public class Vaga implements Serializable {
 		this.cargo = cargo;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -87,11 +87,11 @@ public class Vaga implements Serializable {
 	}
 
 	public Date getData() {
-		return data;
+		return dataInicial;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setData(Date dataInicial) {
+		this.dataInicial = dataInicial;
 	}
 
 	public Date getDataFinal() {

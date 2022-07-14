@@ -19,7 +19,7 @@ public class CandidatoVaga implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	private String observacao;
 	private String status;
 	private String classificacao;
@@ -30,7 +30,7 @@ public class CandidatoVaga implements Serializable {
 	public CandidatoVaga() {
 	}
 
-	public CandidatoVaga(Integer id, String observacao, CandidatoVagaStatus status, 
+	public CandidatoVaga(Long id, String observacao, CandidatoVagaStatus status, 
 			String classificacao, Vaga vaga, Candidato candidato) {
 		super();
 		this.id = id;
@@ -41,11 +41,11 @@ public class CandidatoVaga implements Serializable {
 		this.candidato = candidato;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
