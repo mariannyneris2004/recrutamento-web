@@ -1,7 +1,9 @@
 package br.com.flavianeris.recrutamento.entidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -10,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Vaga implements Serializable {
@@ -37,6 +41,12 @@ public class Vaga implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "cargo_id")
 	private Cargo cargo;
+	
+	@OneToOne
+	private FinalizarVaga finalizarVaga;
+	
+	@OneToMany(mappedBy = "vaga")
+	private List<CandidatoVaga> candidatosVaga = new ArrayList<>();
 	
 	public Vaga() {
 	}

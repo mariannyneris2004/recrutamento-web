@@ -12,12 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
-
 import br.com.flavianeris.recrutamento.entidades.enums.CandidatoCNH;
 import br.com.flavianeris.recrutamento.entidades.enums.CandidatoGenero;
-import br.com.flavianeris.recrutamento.entidades.enums.CandidatoInfoTipo;
 import br.com.flavianeris.recrutamento.entidades.enums.CandidatoStatus;
 
 @Entity
@@ -40,6 +36,9 @@ public class Candidato implements Serializable {
 
 	@OneToMany(mappedBy = "candidato")
 	private List<CandidatoInfo> infos = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "candidato")
+	private List<CandidatoVaga> candidatosVaga = new ArrayList<>();
 	
 	public Candidato() {
 	}

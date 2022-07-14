@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import br.com.flavianeris.recrutamento.entidades.enums.CandidatoVagaStatus;
 import br.com.flavianeris.recrutamento.entidades.enums.FinalizarVagaModalidade;
@@ -28,9 +30,12 @@ public class FinalizarVaga implements Serializable {
 	private String outro;
 	private String observacao;
 
-	private Cargo cargo;
-	private Cliente cliente;
+	@OneToOne
+	@JoinColumn(name = "vaga_id")
 	private Vaga vaga;
+	
+	@OneToOne
+	@JoinColumn(name = "candidato_vaga_id")
 	private CandidatoVaga candidatoVaga;
 
 	public FinalizarVaga() {
@@ -115,22 +120,6 @@ public class FinalizarVaga implements Serializable {
 
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
-	}
-
-	public Cargo getCargo() {
-		return cargo;
-	}
-
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
 	}
 
 	@Override

@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import br.com.flavianeris.recrutamento.entidades.enums.CandidatoStatus;
 import br.com.flavianeris.recrutamento.entidades.enums.CandidatoVagaStatus;
@@ -24,8 +27,16 @@ public class CandidatoVaga implements Serializable {
 	private String status;
 	private String classificacao;
 	
+	@ManyToOne
+	@JoinColumn(name = "vaga_id")
 	private Vaga vaga;
+	
+	@ManyToOne
+	@JoinColumn(name = "candidato_id")
 	private Candidato candidato;
+	
+	@OneToOne
+	private FinalizarVaga finalizarVaga;
 	
 	public CandidatoVaga() {
 	}
