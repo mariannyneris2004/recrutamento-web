@@ -1,22 +1,33 @@
 package br.com.flavianeris.recrutamento.resources;
 
-import java.text.ParseException;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.flavianeris.recrutamento.entidades.Cliente;
+import br.com.flavianeris.recrutamento.services.ClienteService;
 
 @RestController
 @RequestMapping(value = "/clientes")
 public class ClienteResource {
 	
+	@Autowired
+	private ClienteService service;
+	
 	@GetMapping
-	public ResponseEntity<Cliente> findAll() throws ParseException{
-		Cliente c = new Cliente(1L, "Flávia Neris", "Flávia", "1234567", 
-				"RH", "nenhuma", "nenhuma", "985104522", "flavia@gmail.com");
-		return ResponseEntity.ok().body(c);
+	public ResponseEntity<List<Cliente>> findAll() {
+		List<Cliente> list = service.findAll();
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<Cliente> findById(@PathVariable Long id){
+		Cliente obj = service.findById(id);
+		return ResponseEntity.ok().body(obj);
 	}
 }

@@ -1,29 +1,33 @@
 package br.com.flavianeris.recrutamento.resources;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.flavianeris.recrutamento.entidades.Candidato;
-import br.com.flavianeris.recrutamento.entidades.enums.CandidatoCNH;
-import br.com.flavianeris.recrutamento.entidades.enums.CandidatoGenero;
-import br.com.flavianeris.recrutamento.entidades.enums.CandidatoStatus;
+import br.com.flavianeris.recrutamento.services.CandidatoService;
 
 @RestController
 @RequestMapping(value = "/candidatos")
 public class CandidatoResource {
 
-	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
+	@Autowired
+	private CandidatoService service;
+	
 	@GetMapping
-	public ResponseEntity<Candidato> findAll() throws ParseException{
-		Candidato c = new Candidato(null, "Mary", sdf.parse("16/08/2004"), "984562004",
-				"985104522", "rua 14, n273A, st Luzia", CandidatoCNH.NÃOPOSSUI,
-				"mary@gmail.com", "teste", CandidatoStatus.ATIVO, CandidatoGenero.NÃODECLARAR);
-		return ResponseEntity.ok().body(c);
+	public ResponseEntity<List<Candidato>> findAll() {
+		List<Candidato> list = service.findAll();
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<Candidato> findById(@PathVariable Long id){
+		Candidato obj = service.findById(id);
+		return ResponseEntity.ok().body(obj);
 	}
 }

@@ -95,7 +95,7 @@ public class TestConfig implements CommandLineRunner{
 		vagaRepository.saveAll(Arrays.asList(vaga1));
 		
 		CandidatoVaga cv1 = new CandidatoVaga(null, "Observação - teste", 
-				CandidatoVagaStatus.ANÁLISE, "Classificação - teste", vaga1, candidato2);
+				CandidatoVagaStatus.TESTE, "Classificação - teste", vaga1, candidato2);
 		
 		cvRepository.saveAll(Arrays.asList(cv1));
 		
