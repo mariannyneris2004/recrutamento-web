@@ -15,7 +15,7 @@ import br.com.flavianeris.recrutamento.services.CandidatoInfoService;
 @RestController
 @RequestMapping(value = "/candidatos/informacoes")
 public class CandidatoInfoResource {
-
+	
 	@Autowired
 	private CandidatoInfoService service;
 	
