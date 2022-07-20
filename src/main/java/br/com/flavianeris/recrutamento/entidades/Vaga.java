@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -41,9 +42,6 @@ public class Vaga implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "cargo_id")
 	private Cargo cargo;
-	
-	@OneToOne
-	private FinalizarVaga finalizarVaga;
 	
 	@OneToMany(mappedBy = "vaga")
 	private List<CandidatoVaga> candidatosVaga = new ArrayList<>();
@@ -96,11 +94,11 @@ public class Vaga implements Serializable {
 		this.requisitos = requisitos;
 	}
 
-	public Date getData() {
+	public Date getDataInicial() {
 		return dataInicial;
 	}
 
-	public void setData(Date dataInicial) {
+	public void setDataInicial(Date dataInicial) {
 		this.dataInicial = dataInicial;
 	}
 
@@ -184,6 +182,7 @@ public class Vaga implements Serializable {
 		this.cargo = cargo;
 	}
 
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id, titulo);

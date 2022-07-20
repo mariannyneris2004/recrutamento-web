@@ -92,14 +92,19 @@ public class TestConfig implements CommandLineRunner{
 				"Benefícios - teste", "200H", "8H", "Periculosidade", "Insalubridade", 
 				"Descrição - teste", cliente1, cargo1);
 		
-		vagaRepository.saveAll(Arrays.asList(vaga1));
+		Vaga vaga2 = new Vaga(null, "Título vaga 2", "Requisitos 2", 
+				sdf.parse("20/07/2022"), sdf.parse("30/07/2022"), "5000", 
+				"Benefícios 2", "200H", "8H", "Periculosidade", "Insalubridade", 
+				"Descrição 2", cliente1, cargo2);
+		
+		vagaRepository.saveAll(Arrays.asList(vaga1, vaga2));
 		
 		CandidatoVaga cv1 = new CandidatoVaga(null, "Observação - teste", 
 				CandidatoVagaStatus.TESTE, "Classificação - teste", vaga1, candidato2);
 		
 		cvRepository.saveAll(Arrays.asList(cv1));
 		
-		FinalizarVaga finalizar1 = new FinalizarVaga(null, vaga1, cv1, 
+		FinalizarVaga finalizar1 = new FinalizarVaga(null, cv1,
 				sdf.parse("14/07/2022"), FinalizarVagaModalidade.QUARENTAECINCO, 
 				FinalizarVagaStatus.EFETIVADO, "", "teste");
 		

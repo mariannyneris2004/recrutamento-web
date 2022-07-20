@@ -6,11 +6,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
 import br.com.flavianeris.recrutamento.entidades.enums.CandidatoVagaStatus;
@@ -30,22 +32,18 @@ public class FinalizarVaga implements Serializable {
 	private String outro;
 	private String observacao;
 
-	@OneToOne
-	@JoinColumn(name = "vaga_id")
-	private Vaga vaga;
-	
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.DETACH})
 	@JoinColumn(name = "candidato_vaga_id")
 	private CandidatoVaga candidatoVaga;
 
 	public FinalizarVaga() {
 	}
 
-	public FinalizarVaga(Long id, Vaga vaga, CandidatoVaga candidatoVaga, Date admissao, FinalizarVagaModalidade modalidade,
-			FinalizarVagaStatus status, String outro, String observacao) {
+	public FinalizarVaga(Long id, CandidatoVaga candidatoVaga, Date admissao, 
+			FinalizarVagaModalidade modalidade,FinalizarVagaStatus status, String outro, 
+			String observacao) {
 		super();
 		this.id = id;
-		this.vaga = vaga;
 		this.candidatoVaga = candidatoVaga;
 		this.admissao = admissao;
 		setModalidade(modalidade);
@@ -60,14 +58,6 @@ public class FinalizarVaga implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Vaga getVaga() {
-		return vaga;
-	}
-
-	public void setVaga(Vaga vaga) {
-		this.vaga = vaga;
 	}
 
 	public CandidatoVaga getCandidatoVaga() {
@@ -141,7 +131,7 @@ public class FinalizarVaga implements Serializable {
 
 	@Override
 	public String toString() {
-		return "VagasFinalizadas [vaga=" + vaga + ", candidatoVaga=" + candidatoVaga + ", admissao=" + admissao
+		return "VagasFinalizadas [vaga=" + candidatoVaga.getId() + ", candidatoVaga=" + candidatoVaga + ", admissao=" + admissao
 				+ ", modalidade=" + modalidade + ", status=" + status + "]";
 	}
 

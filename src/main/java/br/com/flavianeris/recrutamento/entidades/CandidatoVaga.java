@@ -35,9 +35,6 @@ public class CandidatoVaga implements Serializable {
 	@JoinColumn(name = "candidato_id")
 	private Candidato candidato;
 	
-	@OneToOne
-	private FinalizarVaga finalizarVaga;
-	
 	public CandidatoVaga() {
 	}
 
