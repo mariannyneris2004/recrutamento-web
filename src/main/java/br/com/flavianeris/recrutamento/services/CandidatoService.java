@@ -23,4 +23,12 @@ public class CandidatoService {
 		Optional<Candidato> obj = repository.findById(id);
 		return obj.get();
 	}
+	
+	public Candidato insert(Candidato obj) {
+		return repository.save(obj);
+	}
+	
+//	public void delete(Long id) {
+//		repository.deleteById(id);
+//	}
 }

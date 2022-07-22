@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.flavianeris.recrutamento.entidades.Candidato;
 import br.com.flavianeris.recrutamento.entidades.CandidatoInfo;
 import br.com.flavianeris.recrutamento.repositorios.CandidatoInfoRepository;
 
@@ -23,4 +24,8 @@ public class CandidatoInfoService {
 		Optional<CandidatoInfo> obj = repository.findById(id);
 		return obj.get();
 	}
+	
+//	public CandidatoInfo insert(CandidatoInfo obj) {
+//		return repository.save(obj);
+//	}
 }
