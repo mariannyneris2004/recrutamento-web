@@ -62,12 +62,12 @@ public class TestConfig implements CommandLineRunner{
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		Candidato candidato1 = new Candidato(null, "Mary", sdf.parse("16/08/2004"), "984562004",
-				"985104522", "rua 14, n273A, st Luzia", CandidatoCNH.NÃOPOSSUI,
-				"mary@gmail.com", "teste", CandidatoStatus.ATIVO, CandidatoGenero.NÃODECLARAR);
+				"985104522", "rua 14, n273A, st Luzia", CandidatoCNH.NÃOPOSSUI.getCodigo(),
+				"mary@gmail.com", "teste", CandidatoStatus.ATIVO.getCodigo(), CandidatoGenero.NÃODECLARAR.getCodigo());
 	
 		Candidato candidato2 = new Candidato(null, "Wender", sdf.parse("06/01/1983"), "985464250",
-				"985104522", "rua 14, n273A, st Luzia", CandidatoCNH.B,
-				"wender@gmail.com", "teste", CandidatoStatus.ATIVO, CandidatoGenero.MASCULINO);
+				"985104522", "rua 14, n273A, st Luzia", CandidatoCNH.B.getCodigo(),
+				"wender@gmail.com", "teste", CandidatoStatus.ATIVO.getCodigo(), CandidatoGenero.MASCULINO.getCodigo());
 		
 		candidatoRepository.saveAll(Arrays.asList(candidato1, candidato2));
 		
@@ -82,7 +82,7 @@ public class TestConfig implements CommandLineRunner{
 		
 		clienteRepository.saveAll(Arrays.asList(cliente1));
 		
-		CandidatoInfo ci1 = new CandidatoInfo(candidato2, null, CandidatoInfoTipo.FORMAÇÃO, "2020", "2022",
+		CandidatoInfo ci1 = new CandidatoInfo(candidato2, null, CandidatoInfoTipo.FORMAÇÃO.getCodigo(), "2020", "2022",
 				"Ensino médio", cargo2);
 		
 		ciRepository.saveAll(Arrays.asList(ci1));
@@ -100,13 +100,13 @@ public class TestConfig implements CommandLineRunner{
 		vagaRepository.saveAll(Arrays.asList(vaga1, vaga2));
 		
 		CandidatoVaga cv1 = new CandidatoVaga(null, "Observação - teste", 
-				CandidatoVagaStatus.TESTE, "Classificação - teste", vaga1, candidato2);
+				CandidatoVagaStatus.TESTE.getCodigo(), "Classificação - teste", vaga1, candidato2);
 		
 		cvRepository.saveAll(Arrays.asList(cv1));
 		
 		FinalizarVaga finalizar1 = new FinalizarVaga(null, cv1,
-				sdf.parse("14/07/2022"), FinalizarVagaModalidade.QUARENTAECINCO, 
-				FinalizarVagaStatus.EFETIVADO, "", "teste");
+				sdf.parse("14/07/2022"), FinalizarVagaModalidade.QUARENTAECINCO.getCodigo(), 
+				FinalizarVagaStatus.EFETIVADO.getCodigo(), "", "teste");
 		
 		finalizarRepository.saveAll(Arrays.asList(finalizar1));
 	}

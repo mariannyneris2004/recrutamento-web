@@ -23,4 +23,8 @@ public class CargoService {
 		Optional<Cargo> obj = repository.findById(id);
 		return obj.get();
 	}
+	
+	public Cargo insert(Cargo obj) {
+		return repository.save(obj);
+	}
 }

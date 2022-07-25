@@ -23,4 +23,8 @@ public class VagaService {
 		Optional<Vaga> obj = repository.findById(id);
 		return obj.get();
 	}
+	
+	public Vaga insert(Vaga obj) {
+		return repository.save(obj);
+	}
 }

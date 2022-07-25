@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import br.com.flavianeris.recrutamento.entidades.Candidato;
 import br.com.flavianeris.recrutamento.entidades.CandidatoInfo;
 import br.com.flavianeris.recrutamento.repositorios.CandidatoInfoRepository;
+import br.com.flavianeris.recrutamento.repositorios.CandidatoRepository;
 
 @Service
 public class CandidatoInfoService {
@@ -25,7 +26,7 @@ public class CandidatoInfoService {
 		return obj.get();
 	}
 	
-//	public CandidatoInfo insert(CandidatoInfo obj) {
-//		return repository.save(obj);
-//	}
+	public CandidatoInfo insert(CandidatoInfo info) {
+		return repository.save(info);
+	}
 }

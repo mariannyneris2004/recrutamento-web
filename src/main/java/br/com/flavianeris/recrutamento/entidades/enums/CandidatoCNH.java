@@ -20,12 +20,16 @@ public enum CandidatoCNH {
 		return codigo;
 	}
 	
+	public static String toString(CandidatoCNH cnh) {
+		return cnh.getCodigo();
+	}
+	
 	public static CandidatoCNH valorDe(String codigo) {
 		for (CandidatoCNH value : CandidatoCNH.values()) {
 			if (value.getCodigo() == codigo) {
 				return value;
 			}
 		}
-		throw new IllegalArgumentException("Código inválido.");
+		throw new IllegalArgumentException("Código inválido. cnh");
 	}
 }

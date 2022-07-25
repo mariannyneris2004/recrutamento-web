@@ -49,19 +49,19 @@ public class Candidato implements Serializable {
 
 	public Candidato(Long id, String nome, Date dataNascimento, 
 			String telefone, String telefoneContato, String endereco, 
-			CandidatoCNH cnh, String email, String observacao, CandidatoStatus status, 
-			CandidatoGenero genero) {
+			String cnh, String email, String observacao, String status, 
+			String genero) {
 		this.id = id;
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
 		this.telefone = telefone;
 		this.telefoneContato = telefoneContato;
 		this.endereco = endereco;
-		setCnh(cnh);
+		this.cnh = cnh;
 		this.email = email;
 		this.observacao = observacao;
-		setStatus(status);
-		setGenero(genero);
+		this.status = status;
+		this.genero = genero;
 	}
 
 	public Long getId() {
@@ -111,15 +111,13 @@ public class Candidato implements Serializable {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	
-	public CandidatoCNH getCnh() {
-		return CandidatoCNH.valorDe(cnh);
+
+	public String getCnh() {
+		return cnh;
 	}
-	
-	public void setCnh(CandidatoCNH cnh) {
-		if (cnh != null) {
-			this.cnh = cnh.getCodigo();
-		}
+
+	public void setCnh(String cnh) {
+		this.cnh = cnh;
 	}
 
 	public String getEmail() {
@@ -137,27 +135,23 @@ public class Candidato implements Serializable {
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
 	}
+	
+	public String getStatus() {
+		return status;
+	}
 
-	public CandidatoStatus getStatus() {
-		return CandidatoStatus.valorDe(status);
+	public void setStatus(String status) {
+		this.status = status;
 	}
-	
-	public void setStatus(CandidatoStatus status) {
-		if (status != null) {
-			this.status = status.getCodigo();
-		}
+
+	public String getGenero() {
+		return genero;
 	}
-	
-	public CandidatoGenero getGenero() {
-		return CandidatoGenero.valorDe(genero);
+
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
-	
-	public void setGenero(CandidatoGenero genero) {
-		if (genero != null) {
-			this.genero = genero.getCodigo();
-		}
-	}
-	
+
 	public void setCandidato(Candidato candidato) {
 		this.setCandidato(candidato);
 	}

@@ -36,11 +36,11 @@ public class CandidatoInfoResource {
 		return ResponseEntity.ok().body(obj);
 	}
 	
-//	@PostMapping
-//	public ResponseEntity<CandidatoInfo> insert(@RequestBody CandidatoInfo obj){
-//		obj = service.insert(obj);
-//		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-//				.path("/{id}").buildAndExpand(obj.getId()).toUri();
-//		return ResponseEntity.created(uri).body(obj);
-//	}
+	@PostMapping
+	public ResponseEntity<CandidatoInfo> insert(@RequestBody CandidatoInfo obj){
+		obj = service.insert(obj);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+				.path("/{id}").buildAndExpand(obj.getId()).toUri();
+		return ResponseEntity.created(uri).body(obj);
+	}
 }

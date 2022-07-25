@@ -39,27 +39,25 @@ public class CandidatoInfo implements Serializable {
 	public CandidatoInfo() {
 	}
 
-	public CandidatoInfo(Candidato candidato,Long id, CandidatoInfoTipo tipo, String anoInicial, 
+	public CandidatoInfo(Candidato candidato,Long id, String tipo, String anoInicial, 
 			String anoFinal, String descricao, Cargo cargo) {
 		this.candidato = candidato;
 		this.id = id;
-		setTipo(tipo);
+		this.tipo = tipo;
 		this.anoInicial = anoInicial;
 		this.anoFinal = anoFinal;
 		this.descricao = descricao;
 		this.cargo = cargo;
 	}
+	
+	public String getTipo() {
+		return tipo;
+	}
 
-	public CandidatoInfoTipo getTipo() {
-		return CandidatoInfoTipo.valorDe(tipo);
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
-	
-	public void setTipo(CandidatoInfoTipo tipo) {
-		if (tipo != null) {
-			this.tipo = tipo.getCodigo();
-		}
-	}
-	
+
 	public String getAnoInicial() {
 		return anoInicial;
 	}

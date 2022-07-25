@@ -23,4 +23,8 @@ public class CandidatoVagaService {
 		Optional<CandidatoVaga> obj = repository.findById(id);
 		return obj.get();
 	}
+	
+	public CandidatoVaga insert(CandidatoVaga obj) {
+		return repository.save(obj);
+	}
 }

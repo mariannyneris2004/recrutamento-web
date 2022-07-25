@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.flavianeris.recrutamento.entidades.Candidato;
 import br.com.flavianeris.recrutamento.entidades.FinalizarVaga;
 import br.com.flavianeris.recrutamento.repositorios.FinalizarVagaRepository;
 
@@ -22,5 +23,9 @@ public class FinalizarVagaService {
 	public FinalizarVaga findById(Long id) {
 		Optional<FinalizarVaga> obj = repository.findById(id);
 		return obj.get();
+	}
+	
+	public FinalizarVaga insert(FinalizarVaga obj) {
+		return repository.save(obj);
 	}
 }

@@ -40,14 +40,14 @@ public class FinalizarVaga implements Serializable {
 	}
 
 	public FinalizarVaga(Long id, CandidatoVaga candidatoVaga, Date admissao, 
-			FinalizarVagaModalidade modalidade,FinalizarVagaStatus status, String outro, 
+			String modalidade,String status, String outro, 
 			String observacao) {
 		super();
 		this.id = id;
 		this.candidatoVaga = candidatoVaga;
 		this.admissao = admissao;
-		setModalidade(modalidade);
-		setStatus(status);
+		this.modalidade = modalidade;
+		this.status = status;
 		this.outro = outro;
 		this.observacao = observacao;
 	}
@@ -76,24 +76,20 @@ public class FinalizarVaga implements Serializable {
 		this.admissao = admissao;
 	}
 
-	public FinalizarVagaModalidade getModalidade() {
-		return FinalizarVagaModalidade.valorDe(modalidade);
+	public String getModalidade() {
+		return modalidade;
 	}
 
-	public void setModalidade(FinalizarVagaModalidade modalidade) {
-		if (modalidade != null) {
-			this.modalidade = modalidade.getCodigo();
-		}
+	public void setModalidade(String modalidade) {
+		this.modalidade = modalidade;
 	}
 
-	public FinalizarVagaStatus getStatus() {
-		return FinalizarVagaStatus.valorDe(status);
+	public String getStatus() {
+		return status;
 	}
 
-	public void setStatus(FinalizarVagaStatus status) {
-		if (status != null) {
-			this.status = status.getCodigo();
-		}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getOutro() {

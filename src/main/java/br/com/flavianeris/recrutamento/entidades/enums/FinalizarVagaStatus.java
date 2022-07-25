@@ -22,6 +22,6 @@ public enum FinalizarVagaStatus {
 				return value;
 			}
 		}
-		throw new IllegalArgumentException("Código inválido.");
+		throw new IllegalArgumentException("Código inválido. finalizarVagaStatus");
 	}
 }

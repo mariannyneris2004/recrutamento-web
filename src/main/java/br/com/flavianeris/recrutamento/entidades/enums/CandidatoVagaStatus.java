@@ -24,6 +24,6 @@ public enum CandidatoVagaStatus {
 				return value;
 			}
 		}
-		throw new IllegalArgumentException("Código inválido.");
+		throw new IllegalArgumentException("Código inválido. candidatoVagaStatus");
 	}
 }

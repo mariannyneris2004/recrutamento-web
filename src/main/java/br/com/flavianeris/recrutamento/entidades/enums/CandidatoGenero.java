@@ -23,6 +23,6 @@ public enum CandidatoGenero {
 				return value;
 			}
 		}
-		throw new IllegalArgumentException("Código inválido.");
+		throw new IllegalArgumentException("Código inválido. genero");
 	}
 }

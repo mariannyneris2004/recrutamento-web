@@ -38,12 +38,12 @@ public class CandidatoVaga implements Serializable {
 	public CandidatoVaga() {
 	}
 
-	public CandidatoVaga(Long id, String observacao, CandidatoVagaStatus status, 
+	public CandidatoVaga(Long id, String observacao, String status, 
 			String classificacao, Vaga vaga, Candidato candidato) {
 		super();
 		this.id = id;
 		this.observacao = observacao;
-		setStatus(status);
+		this.status = status;
 		this.classificacao = classificacao;
 		this.vaga = vaga;
 		this.candidato = candidato;
@@ -65,14 +65,12 @@ public class CandidatoVaga implements Serializable {
 		this.observacao = observacao;
 	}
 
-	public CandidatoVagaStatus getStatus() {
-		return CandidatoVagaStatus.valorDe(status);
+	public String getStatus() {
+		return status;
 	}
-	
-	public void setStatus(CandidatoVagaStatus status) {
-		if (status != null) {
-			this.status = status.getCodigo();
-		}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getClassificacao() {
