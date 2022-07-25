@@ -28,4 +28,8 @@ public class FinalizarVagaService {
 	public FinalizarVaga insert(FinalizarVaga obj) {
 		return repository.save(obj);
 	}
+	
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
 }

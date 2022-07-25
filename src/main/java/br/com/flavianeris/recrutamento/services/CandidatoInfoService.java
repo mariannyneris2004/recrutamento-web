@@ -29,4 +29,8 @@ public class CandidatoInfoService {
 	public CandidatoInfo insert(CandidatoInfo info) {
 		return repository.save(info);
 	}
+	
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
 }

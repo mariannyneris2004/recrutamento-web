@@ -1,0 +1,22 @@
+#CANDIDATO#
+- CandidatoInfo
+- CandidatoVaga
+- FinalizarVaga
+
+#CANDIDATO INFO#
+
+#CANDIDATO VAGA#
+- FinalizarVaga
+
+#CARGO#
+- Vaga
+- CandidatoInfo
+
+#CLIENTE#
+- Vaga
+
+#FINALIZAR VAGA#
+
+#VAGA#
+- CandidatoVaga
+- FinalizarVaga
