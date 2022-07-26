@@ -90,6 +90,10 @@ public class CandidatoInfo implements Serializable {
 		return cargo;
 	}
 	
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
+	}
+	
 	public Long getId() {
 		return id;
 	}

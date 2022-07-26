@@ -34,4 +34,19 @@ public class CandidatoInfoService {
 	public void delete(Long id) {
 		repository.deleteById(id);
 	}
+	
+	public CandidatoInfo update(Long id, CandidatoInfo obj) {
+		CandidatoInfo entity = repository.getOne(id);
+		updateData(entity, obj);
+		return repository.save(entity);
+	}
+	
+	private void updateData(CandidatoInfo entity, CandidatoInfo obj) {
+		entity.setTipo(obj.getTipo());
+		entity.setDescricao(obj.getDescricao());;
+		entity.setAnoInicial(obj.getAnoInicial());
+		entity.setAnoFinal(obj.getAnoFinal());
+		entity.setCargo(obj.getCargo());
+		
+	}
 }
