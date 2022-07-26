@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import br.com.flavianeris.recrutamento.entidades.Candidato;
 import br.com.flavianeris.recrutamento.entidades.FinalizarVaga;
 import br.com.flavianeris.recrutamento.repositorios.FinalizarVagaRepository;
+import br.com.flavianeris.recrutamento.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class FinalizarVagaService {
@@ -22,7 +23,7 @@ public class FinalizarVagaService {
 	
 	public FinalizarVaga findById(Long id) {
 		Optional<FinalizarVaga> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public FinalizarVaga insert(FinalizarVaga obj) {

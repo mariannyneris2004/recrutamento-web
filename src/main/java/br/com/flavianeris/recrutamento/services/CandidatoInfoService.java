@@ -10,6 +10,7 @@ import br.com.flavianeris.recrutamento.entidades.Candidato;
 import br.com.flavianeris.recrutamento.entidades.CandidatoInfo;
 import br.com.flavianeris.recrutamento.repositorios.CandidatoInfoRepository;
 import br.com.flavianeris.recrutamento.repositorios.CandidatoRepository;
+import br.com.flavianeris.recrutamento.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class CandidatoInfoService {
@@ -23,7 +24,7 @@ public class CandidatoInfoService {
 	
 	public CandidatoInfo findById(Long id) {
 		Optional<CandidatoInfo> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public CandidatoInfo insert(CandidatoInfo info) {

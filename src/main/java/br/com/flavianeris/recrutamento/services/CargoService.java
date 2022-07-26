@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.flavianeris.recrutamento.entidades.Cargo;
 import br.com.flavianeris.recrutamento.repositorios.CargoRepository;
+import br.com.flavianeris.recrutamento.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class CargoService {
@@ -21,7 +22,7 @@ public class CargoService {
 	
 	public Cargo findById(Long id) {
 		Optional<Cargo> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public Cargo insert(Cargo obj) {
