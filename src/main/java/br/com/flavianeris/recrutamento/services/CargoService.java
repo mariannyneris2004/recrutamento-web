@@ -28,4 +28,8 @@ public class CargoService {
 	public Cargo insert(Cargo obj) {
 		return repository.save(obj);
 	}
+	
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
 }

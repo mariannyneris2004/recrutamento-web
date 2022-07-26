@@ -28,4 +28,8 @@ public class CandidatoVagaService {
 	public CandidatoVaga insert(CandidatoVaga obj) {
 		return repository.save(obj);
 	}
+	
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
 }

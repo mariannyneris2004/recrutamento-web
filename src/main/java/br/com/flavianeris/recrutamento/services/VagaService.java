@@ -28,4 +28,8 @@ public class VagaService {
 	public Vaga insert(Vaga obj) {
 		return repository.save(obj);
 	}
+	
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
 }
