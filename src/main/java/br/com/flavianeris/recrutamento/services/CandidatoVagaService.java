@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.flavianeris.recrutamento.entidades.Candidato;
 import br.com.flavianeris.recrutamento.entidades.CandidatoVaga;
 import br.com.flavianeris.recrutamento.repositorios.CandidatoVagaRepository;
 import br.com.flavianeris.recrutamento.services.exceptions.ResourceNotFoundException;
@@ -31,5 +32,19 @@ public class CandidatoVagaService {
 	
 	public void delete(Long id) {
 		repository.deleteById(id);
+	}
+	
+	public CandidatoVaga update(Long id, CandidatoVaga obj) {
+		CandidatoVaga entity = repository.getOne(id);
+		updateData(entity, obj);
+		return repository.save(entity);
+	}
+	
+	private void updateData(CandidatoVaga entity, CandidatoVaga obj) {
+		entity.setCandidato(obj.getCandidato());
+		entity.setClassificacao(obj.getClassificacao());
+		entity.setObservacao(obj.getObservacao());
+		entity.setStatus(obj.getStatus());
+		
 	}
 }
