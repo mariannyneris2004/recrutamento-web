@@ -3,7 +3,6 @@ package br.com.flavianeris.recrutamento.services;
 import java.util.List;
 import java.util.Optional;
 
-import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -34,20 +33,13 @@ public class CandidatoService {
 	}
 	
 	public void delete(Long id) {
-		repository.deleteById(id);
-//		try {
-//			repository.deleteById(id);
-//		} catch (EmptyResultDataAccessException e) {
-//			throw new ResourceNotFoundException(id);
-//		} catch (DataIntegrityViolationException e) {
-//			throw new DatabaseException(e.getMessage());
-//		} catch (IllegalStateException e) {
-//			throw new DatabaseException(e.getMessage());
-//		} catch (ConstraintViolationException e) {
-//			throw new DatabaseException(e.getMessage());
-//		} catch (RuntimeException e) {
-//			throw new RuntimeException(e.getMessage());
-//		}
+		try {
+			repository.deleteById(id);
+		} catch (EmptyResultDataAccessException e) {
+			throw new ResourceNotFoundException(id);
+		} catch (DataIntegrityViolationException e) {
+			throw new DatabaseException(e.getMessage());
+		} 
 	}
 	
 	public Candidato update(Long id, Candidato obj) {
