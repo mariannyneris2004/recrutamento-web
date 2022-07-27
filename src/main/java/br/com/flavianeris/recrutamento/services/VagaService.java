@@ -32,4 +32,26 @@ public class VagaService {
 	public void delete(Long id) {
 		repository.deleteById(id);
 	}
+	
+	public Vaga update(Long id, Vaga obj) {
+		Vaga entity = repository.getOne(id);
+		updateData(entity, obj);
+		return repository.save(entity);
+	}
+	
+	private void updateData(Vaga entity, Vaga obj) {
+		entity.setTitulo(obj.getTitulo());
+		entity.setBeneficios(obj.getBeneficios());
+		entity.setCargaHoraria(obj.getCargaHoraria());
+		entity.setCargo(obj.getCargo());
+		entity.setCliente(obj.getCliente());
+		entity.setDataFinal(obj.getDataFinal());
+		entity.setDataInicial(obj.getDataInicial());
+		entity.setDescricao(obj.getDescricao());
+		entity.setInsalubridade(obj.getInsalubridade());
+		entity.setJornadaTrabalho(obj.getJornadaTrabalho());
+		entity.setPericulosidade(obj.getPericulosidade());
+		entity.setRequisitos(obj.getRequisitos());
+		entity.setSalario(obj.getSalario());
+	}
 }
