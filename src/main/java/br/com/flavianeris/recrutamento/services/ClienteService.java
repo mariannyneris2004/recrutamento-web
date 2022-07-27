@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.flavianeris.recrutamento.entidades.Candidato;
 import br.com.flavianeris.recrutamento.entidades.Cliente;
 import br.com.flavianeris.recrutamento.repositorios.ClienteRepository;
 import br.com.flavianeris.recrutamento.services.exceptions.ResourceNotFoundException;
@@ -31,5 +32,22 @@ public class ClienteService {
 	
 	public void delete(Long id) {
 		repository.deleteById(id);
+	}
+	
+	public Cliente update(Long id, Cliente obj) {
+		Cliente entity = repository.getOne(id);
+		updateData(entity, obj);
+		return repository.save(entity);
+	}
+	
+	private void updateData(Cliente entity, Cliente obj) {
+		entity.setNomeCliente(obj.getNomeCliente());
+		entity.setCnpj(obj.getCnpj());
+		entity.setEmail(obj.getEmail());
+		entity.setPreferencias(obj.getPreferencias());
+		entity.setRazaoSocial(obj.getRazaoSocial());
+		entity.setRestricoes(obj.getRestricoes());
+		entity.setSegmentoAtuacao(obj.getSegmentoAtuacao());
+		entity.setTelefone(obj.getTelefone());		
 	}
 }

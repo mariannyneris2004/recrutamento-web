@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.flavianeris.recrutamento.entidades.Candidato;
 import br.com.flavianeris.recrutamento.entidades.Cargo;
 import br.com.flavianeris.recrutamento.repositorios.CargoRepository;
 import br.com.flavianeris.recrutamento.services.exceptions.ResourceNotFoundException;
