@@ -3,11 +3,14 @@ package br.com.flavianeris.recrutamento.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
+import br.com.flavianeris.recrutamento.entidades.FinalizarVaga;
 import br.com.flavianeris.recrutamento.entidades.Vaga;
 import br.com.flavianeris.recrutamento.repositorios.VagaRepository;
 import br.com.flavianeris.recrutamento.services.exceptions.DatabaseException;
@@ -43,9 +46,13 @@ public class VagaService {
 	}
 	
 	public Vaga update(Long id, Vaga obj) {
-		Vaga entity = repository.getOne(id);
-		updateData(entity, obj);
-		return repository.save(entity);
+		try {
+			Vaga entity = repository.getOne(id);
+			updateData(entity, obj);
+			return repository.save(entity);
+		} catch (EntityNotFoundException e) {
+			throw new ResourceNotFoundException(id);
+		}
 	}
 	
 	private void updateData(Vaga entity, Vaga obj) {
