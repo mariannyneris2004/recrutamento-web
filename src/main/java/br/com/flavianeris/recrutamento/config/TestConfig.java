@@ -59,55 +59,55 @@ public class TestConfig implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		
-		Candidato candidato1 = new Candidato(null, "Mary", sdf.parse("16/08/2004"), "984562004",
-				"985104522", "rua 14, n273A, st Luzia", CandidatoCNH.NÃOPOSSUI.getCodigo(),
-				"mary@gmail.com", "teste", CandidatoStatus.ATIVO.getCodigo(), CandidatoGenero.NÃODECLARAR.getCodigo());
-	
-		Candidato candidato2 = new Candidato(null, "Wender", sdf.parse("06/01/1983"), "985464250",
-				"985104522", "rua 14, n273A, st Luzia", CandidatoCNH.B.getCodigo(),
-				"wender@gmail.com", "teste", CandidatoStatus.ATIVO.getCodigo(), CandidatoGenero.MASCULINO.getCodigo());
-		
-		candidatoRepository.saveAll(Arrays.asList(candidato1, candidato2));
-		
-		Cargo cargo1 = new Cargo(null, "teste", "Teste Cargo 1", "curso 1, curso 2", "1234567");
-		
-		Cargo cargo2 = new Cargo(null, "teste 2", "Teste Cargo 2", "curso 3, curso 4", "7654321");
-		
-		cargoRepository.saveAll(Arrays.asList(cargo1, cargo2));
-		
-		Cliente cliente1 = new Cliente(null, "Flávia Neris", "Flávia", "1234567", 
-				"RH", "nenhuma", "nenhuma", "985104522", "flavia@gmail.com");
-		
-		clienteRepository.saveAll(Arrays.asList(cliente1));
-		
-		CandidatoInfo ci1 = new CandidatoInfo(candidato2, null, CandidatoInfoTipo.FORMAÇÃO.getCodigo(), "2020", "2022",
-				"Ensino médio", cargo2);
-		
-		ciRepository.saveAll(Arrays.asList(ci1));
-		
-		Vaga vaga1 = new Vaga(null, "Título vaga", "Requisitos - teste", 
-				sdf.parse("01/07/2022"), sdf.parse("30/07/2022"), "2000", 
-				"Benefícios - teste", "200H", "8H", "Periculosidade", "Insalubridade", 
-				"Descrição - teste", cliente1, cargo1);
-		
-		Vaga vaga2 = new Vaga(null, "Título vaga 2", "Requisitos 2", 
-				sdf.parse("20/07/2022"), sdf.parse("30/07/2022"), "5000", 
-				"Benefícios 2", "200H", "8H", "Periculosidade", "Insalubridade", 
-				"Descrição 2", cliente1, cargo2);
-		
-		vagaRepository.saveAll(Arrays.asList(vaga1, vaga2));
-		
-		CandidatoVaga cv1 = new CandidatoVaga(null, "Observação - teste", 
-				CandidatoVagaStatus.TESTE.getCodigo(), "Classificação - teste", vaga1, candidato2);
-		
-		cvRepository.saveAll(Arrays.asList(cv1));
-		
-		FinalizarVaga finalizar1 = new FinalizarVaga(null, cv1,
-				sdf.parse("14/07/2022"), FinalizarVagaModalidade.QUARENTAECINCO.getCodigo(), 
-				FinalizarVagaStatus.EFETIVADO.getCodigo(), "", "teste");
-		
-		finalizarRepository.saveAll(Arrays.asList(finalizar1));
+//		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//		
+//		Candidato candidato1 = new Candidato(null, "Mary", sdf.parse("16/08/2004"), "984562004",
+//				"985104522", "rua 14, n273A, st Luzia", CandidatoCNH.NÃOPOSSUI.getCodigo(),
+//				"mary@gmail.com", "teste", CandidatoStatus.ATIVO.getCodigo(), CandidatoGenero.NÃODECLARAR.getCodigo());
+//	
+//		Candidato candidato2 = new Candidato(null, "Wender", sdf.parse("06/01/1983"), "985464250",
+//				"985104522", "rua 14, n273A, st Luzia", CandidatoCNH.B.getCodigo(),
+//				"wender@gmail.com", "teste", CandidatoStatus.ATIVO.getCodigo(), CandidatoGenero.MASCULINO.getCodigo());
+//		
+//		candidatoRepository.saveAll(Arrays.asList(candidato1, candidato2));
+//		
+//		Cargo cargo1 = new Cargo(null, "teste", "Teste Cargo 1", "curso 1, curso 2", "1234567");
+//		
+//		Cargo cargo2 = new Cargo(null, "teste 2", "Teste Cargo 2", "curso 3, curso 4", "7654321");
+//		
+//		cargoRepository.saveAll(Arrays.asList(cargo1, cargo2));
+//		
+//		Cliente cliente1 = new Cliente(null, "Flávia Neris", "Flávia", "1234567", 
+//				"RH", "nenhuma", "nenhuma", "985104522", "flavia@gmail.com");
+//		
+//		clienteRepository.saveAll(Arrays.asList(cliente1));
+//		
+//		CandidatoInfo ci1 = new CandidatoInfo(candidato2, null, CandidatoInfoTipo.FORMAÇÃO.getCodigo(), "2020", "2022",
+//				"Ensino médio", cargo2);
+//		
+//		ciRepository.saveAll(Arrays.asList(ci1));
+//		
+//		Vaga vaga1 = new Vaga(null, "Título vaga", "Requisitos - teste", 
+//				sdf.parse("01/07/2022"), sdf.parse("30/07/2022"), "2000", 
+//				"Benefícios - teste", "200H", "8H", "Periculosidade", "Insalubridade", 
+//				"Descrição - teste", cliente1, cargo1);
+//		
+//		Vaga vaga2 = new Vaga(null, "Título vaga 2", "Requisitos 2", 
+//				sdf.parse("20/07/2022"), sdf.parse("30/07/2022"), "5000", 
+//				"Benefícios 2", "200H", "8H", "Periculosidade", "Insalubridade", 
+//				"Descrição 2", cliente1, cargo2);
+//		
+//		vagaRepository.saveAll(Arrays.asList(vaga1, vaga2));
+//		
+//		CandidatoVaga cv1 = new CandidatoVaga(null, "Observação - teste", 
+//				CandidatoVagaStatus.TESTE.getCodigo(), "Classificação - teste", vaga1, candidato2);
+//		
+//		cvRepository.saveAll(Arrays.asList(cv1));
+//		
+//		FinalizarVaga finalizar1 = new FinalizarVaga(null, cv1,
+//				sdf.parse("14/07/2022"), FinalizarVagaModalidade.QUARENTAECINCO.getCodigo(), 
+//				FinalizarVagaStatus.EFETIVADO.getCodigo(), "", "teste");
+//		
+//		finalizarRepository.saveAll(Arrays.asList(finalizar1));
 	}
 }
