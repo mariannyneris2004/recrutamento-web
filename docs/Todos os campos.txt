@@ -1,75 +1,73 @@
 #CANDIDATO#
 - ID
-- Nome
-- Data de nascimento
-- Telefone
-- Telefone para contato
+- Nome *
+- Data de nascimento *
+- Telefone *
+- Telefone para contato *
 - Endereço
-- CNH
-- Email
-- Observação
-- Status
-- Sexo
+- CNH 
+- Email *
+- Observação (Só aparece para o administrador)
+- Status (Só aparece para o administrador)
+- Sexo *
 
 #CANDIDATO INFO#
 - ID
-- Tipo
-- Ano Inicial
-- Ano Final
-- Descrição
-- Candidato
-- Cargo
+- Tipo * (demais campos variam de acordo com o tipo)
+- Ano Inicial Ex form cur
+- Ano Final ex form cur
+- Descrição ex form cur obj rest
+- Candidato 
+- Cargo ex
 
 #CANDIDATO Vaga#
 - ID
-- Observação
-- Status
-- Classificação
+- Observação (Só aparece para o administrador)
+- Status (Só aparece para o administrador)
+- Classificação (Só aparece para o administrador)
 - Vaga
-- Candidato
+- Candidato *
 
 #CARGO#
 - ID
-- Descrição
-- Título
-- Cursos
-- Cbo
+- Descrição *
+- Título *
+- Cursos *
+- Cbo *
 
 #CLIENTE#
 - ID
-- Nome
+- Nome *
 - Razão Social
-- CNPJ
-- Segmento de Atuação
-- Restrições
-- Preferências
-- Telefone
-- Email
+- CNPJ (14) *
+- Segmento de Atuação *
+- Restrições 
+- Preferências 
+- Telefone *
+- Email 
 
-#FINALIZAR VAGA#
+#FINALIZAR VAGA# (Só aparece para o administrador)
 - ID
-- Admissão
-- Modalidade
-- Status
+- Admissão *
+- Modalidade *
+- Status *
 - Outro
 - Observação
 - Vaga
-- Candidato Vaga
-- Cliente
-- Cargo
+- Candidato Vaga *
 
-#VAGA#
+#VAGA# (Só aparece para o administrador)
 - ID
-- Título
-- Requisitos
-- Data Inicial
+- Título *
+- Requisitos *
+- Data Inicial *
 - Data Final
-- Salário
-- Benefícios
-- Carga Horária
-- Jornada de Trabalho
-- Periculosidade
-- Insalubridade
-- Descrição
-- Cargo
-- Cliente
+- Salário *
+- Benefícios *
+- Carga Horária *
+- Jornada de Trabalho *
+- Periculosidade *
+- Insalubridade *
+- Descrição *
+- Cargo *
+- Cliente *
