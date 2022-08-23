@@ -4,6 +4,10 @@ public enum CandidatoCNH {
 
 	ACC("ACC"),
 	A("Categoria A"),
+	AB("Categoria AB"),
+	AC("Categoria AC"),
+	AD("Categoria AD"),
+	AE("Categoria AE"),
 	B("Categoria B"),
 	C("Categoria C"),
 	D("Categoria D"),
