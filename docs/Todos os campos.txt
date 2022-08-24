@@ -53,7 +53,6 @@
 - Status *
 - Outro
 - Observação
-- Vaga
 - Candidato Vaga *
 
 #VAGA# (Só aparece para o administrador)
